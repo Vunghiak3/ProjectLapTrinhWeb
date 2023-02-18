@@ -47,8 +47,7 @@
   background-color: var(--color-background-hover-menu);
   color: var(--color-text-hover-menu);
 }
-.menu-item a::before,
-.menu-item a::after {
+.menu-item a::before{
   content: "";
   position: absolute;
   bottom: 0;
@@ -60,14 +59,10 @@
 }
 .menu-item a:hover:before {
   left: 0;
-  transition: all var(--timer-solid-itemMenu);
-}
-.menu-item a:hover:after {
   right: 0;
   transition: all var(--timer-solid-itemMenu);
 }
-.solid-menu-acitve:before,
-.solid-menu-acitve:after {
+.solid-menu-acitve:before{
   left: 0 !important;
   right: 0 !important;
   background-color: var(--color-solid-itemMenu);
