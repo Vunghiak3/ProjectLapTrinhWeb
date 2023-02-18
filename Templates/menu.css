@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+  --color-text-menu: #5b21b6;
+  --color-text-hover-menu: #1e40af;
+  --color-background-menu: white;
+  --color-background-hover-menu: white;
+  --timer-solid-itemMenu: 0.5s;
+  --color-solid-itemMenu: #5b21b6;
+  --color-background-button: #5b21b6;
+  --color-text-button: white;
+  --color-backround-hover-button: #4c1d95;
+  --color-backround-active-button: #5b21b6;
+}
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+.menu-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menu-logo img {
+  width: 200px;
+  filter: brightness(00);
+}
+.menu-list {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.menu-item a {
+  padding: 10px 10px;
+  margin: 10px 20px;
+  border-radius: 3px;
+  transition: all 0.3s linear;
+  color: var(--color-text-menu);
+  position: relative;
+}
+.menu-item a:hover {
+  background-color: var(--color-background-hover-menu);
+  color: var(--color-text-hover-menu);
+}
+.menu-item a::before,
+.menu-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  top: 90%;
+  background-color: var(--color-solid-itemMenu);
+  transition: all var(--timer-solid-itemMenu);
+}
+.menu-item a:hover:before {
+  left: 0;
+  transition: all var(--timer-solid-itemMenu);
+}
+.menu-item a:hover:after {
+  right: 0;
+  transition: all var(--timer-solid-itemMenu);
+}
+.solid-menu-acitve:before,
+.solid-menu-acitve:after {
+  left: 0 !important;
+  right: 0 !important;
+  background-color: var(--color-solid-itemMenu);
+}
+.menu-container a {
+  font-size: 18px;
+}
+.btn-signin{
+    padding: 15px 25px;
+    background-color: var(--color-background-button);
+    color: var(--color-text-button);
+    border-radius: 5px;
+    transition: all 0.1s linear;
+}
+.btn-signin:hover{
+    background-color: var(--color-backround-hover-button);
+}
+.btn-signin:active{
+    background-color: var(--color-backround-active-button);
+}
