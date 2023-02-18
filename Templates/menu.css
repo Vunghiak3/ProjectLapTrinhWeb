@@ -75,16 +75,120 @@
 .menu-container a {
   font-size: 18px;
 }
-.btn-signin{
-    padding: 15px 25px;
-    background-color: var(--color-background-button);
-    color: var(--color-text-button);
-    border-radius: 5px;
+.btn-signin {
+  padding: 15px 25px;
+  background-color: var(--color-background-button);
+  color: var(--color-text-button);
+  border-radius: 5px;
+  transition: all 0.1s linear;
+}
+.btn-signin:hover {
+  background-color: var(--color-backround-hover-button);
+}
+.btn-signin:active {
+  background-color: var(--color-backround-active-button);
+}
+.menu-mobi-container {
+  display: none;
+}
+.menu-mobi {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  .menu-content {
+    display: none !important;
+  }
+  .btn-signin {
+    background-color: transparent;
+    color: var(--color-text-menu);
+    position: relative;
+    padding: 10px;
+    padding-bottom: 5px;
+  }
+  .btn-signin::before {
+    position: absolute;
+    content: "";
+    right: 7px;
+    left: 7px;
+    bottom: 0;
+    top: 98%;
+    background-color: var(--color-solid-itemMenu);
+  }
+  .btn-signin:hover {
+    background-color: transparent;
+  }
+  .menu-logo img {
+    width: 150px;
+  }
+  .menu-container a {
+    font-size: 16px;
+  }
+  .menu-container {
+    justify-content: space-between;
+    margin: 20px 20px;
+  }
+  .elementor-function {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  .menu-mobi-container {
+    display: block;
+  }
+  .bar {
+    background-color: black;
+    width: 25px;
+    height: 2px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+  .bar::before,
+  .bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
     transition: all 0.1s linear;
-}
-.btn-signin:hover{
-    background-color: var(--color-backround-hover-button);
-}
-.btn-signin:active{
-    background-color: var(--color-backround-active-button);
+  }
+  .bar::before {
+    transform: translateY(-7px);
+  }
+  .bar::after {
+    transform: translateY(7px);
+  }
+
+  .rotate-bar::before {
+    transform: rotate(45deg);
+    visibility: visible;
+  }
+  .rotate-bar::after {
+    transform: rotate(-45deg);
+    visibility: visible;
+  }
+  .rotate-bar {
+    visibility: hidden;
+  }
+  .show-menu {
+    visibility: visible;
+    transform: translateX(0) !important;
+    transition: all 0.2s linear;
+  }
+  .menu-mobi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #312e81e8;
+    width: 50%;
+    transform: translateX(-100%);
+    transition: all 0.2s linear;
+  }
+  .menu-mobi a{
+    color: white;
+  }
 }
